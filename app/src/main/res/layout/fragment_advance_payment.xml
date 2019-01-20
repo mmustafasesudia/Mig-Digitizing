@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.9"
-
         android:orientation="vertical">
 
         <TextView
@@ -64,16 +63,11 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
-                        android:text="$"
+                        android:text="Rs."
 
                         android:textAlignment="center"
                         android:textSize="25dp" />
 
-                    <view
-                        android:layout_width="2dp"
-                        android:layout_height="match_parent"
-
-                        />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -94,7 +88,6 @@
                 android:layout_width="199dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center"
-
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
@@ -136,12 +129,6 @@
         android:orientation="vertical"
 
         >
-
-
-        <view
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:orientation="horizontal" />
 
         <TextView
             android:id="@+id/textView"

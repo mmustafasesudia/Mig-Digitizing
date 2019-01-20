@@ -61,11 +61,42 @@ public class OrderView extends Fragment {
                 .getAsJSONArray(new JSONArrayRequestListener() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        String applique = "", status = "", paidStatus = "";
                         ProgressDialogClass.hideProgress();
                         // do anything with response
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(i);
+                                if (jsonObject.getString("applique").equals("0")) {
+                                    applique = "NO";
+                                } else {
+                                    applique = "YES";
+                                }
+                                if (jsonObject.getString("state").equals("1")) {
+                                    status = "Process";
+                                } else if (jsonObject.getString("state").equals("2")) {
+                                    status = "In Audit";
+                                } else if (jsonObject.getString("state").equals("3")) {
+                                    status = "Cancel";
+                                } else if (jsonObject.getString("state").equals("4")) {
+                                    status = "Quality Check";
+                                } else if (jsonObject.getString("state").equals("5")) {
+                                    status = "Pending Payment";
+                                } else if (jsonObject.getString("state").equals("6")) {
+                                    status = "Complete";
+                                } else if (jsonObject.getString("state").equals("8")) {
+                                    status = "Billing Depart";
+                                } else if (jsonObject.getString("state").equals("99")) {
+                                    status = "Remove";
+                                } else if (jsonObject.getString("state").equals("95")) {
+                                    status = "On Hold";
+                                }
+
+                                if (jsonObject.getString("paiedstatus").equals("0")) {
+                                    paidStatus = "Un-Paid  (Pay Now)";
+                                } else if (jsonObject.getString("paiedstatus").equals("1")) {
+                                    paidStatus = "Paid";
+                                }
                                 OrderViewDetail newDetails = new OrderViewDetail(
                                         jsonObject.getString("id"), jsonObject.getString("orderid"), jsonObject.getString("orderedby"),
                                         jsonObject.getString("orderDate"), jsonObject.getString("designname"), jsonObject.getString("formtype"),
@@ -73,13 +104,13 @@ public class OrderView extends Fragment {
                                         jsonObject.getString("nocolors"), jsonObject.getString("namecolors"),
                                         jsonObject.getString("designsize_height"), jsonObject.getString("designsize_width"), jsonObject.getString("designsize_format"),
                                         jsonObject.getString("patch_qty"), jsonObject.getString("fabric"), jsonObject.getString("fabric_type"),
-                                        jsonObject.getString("baking_material"), jsonObject.getString("qty"), jsonObject.getString("applique"),
+                                        jsonObject.getString("baking_material"), jsonObject.getString("qty"), applique,
                                         jsonObject.getString("numappliques"), jsonObject.getString("colorappliques"), jsonObject.getString("designformat"),
                                         jsonObject.getString("timeframe"), jsonObject.getString("sewsample"), jsonObject.getString("autothread"),
-                                        jsonObject.getString("instructions"), jsonObject.getString("filename"), jsonObject.getString("state"),
+                                        jsonObject.getString("instructions"), jsonObject.getString("filename"), status,
                                         jsonObject.getString("payment"), jsonObject.getString("estimatedate"), jsonObject.getString("deliverydate"),
                                         jsonObject.getString("stiches"), jsonObject.getString("findus"), jsonObject.getString("amount"),
-                                        jsonObject.getString("paiedstatus"), jsonObject.getString("originalfile"), jsonObject.getString("generatedfile"),
+                                        paidStatus, jsonObject.getString("originalfile"), jsonObject.getString("generatedfile"),
                                         jsonObject.getString("pdfFile"), jsonObject.getString("orderDetail"), jsonObject.getString("embFile"),
                                         jsonObject.getString("invoiceDate"), jsonObject.getString("eta"), jsonObject.getString("estimateDetail"),
                                         jsonObject.getString("assignto"), jsonObject.getString("digit_by"), jsonObject.getString("qc_by"),

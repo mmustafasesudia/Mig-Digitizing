@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cToOrder"
                 android:layout_toRightOf="@id/order_Image"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_status"
