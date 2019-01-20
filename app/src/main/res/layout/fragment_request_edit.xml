@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Request Edit"
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -13,67 +18,95 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/editboxlook"
 
-
         >
 
         <Spinner
-            android:id="@+id/orderlist"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/sp_order_edit_list"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:textAlignment="center"
 
             />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_design_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_desc"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/editboxlook"
+            android:hint="Additional Information"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textAlignment="center" />
+
+
+        <Button
+            android:id="@+id/btn_attach_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/editboxlook"
+            android:hint="Attach Picture"
+            android:textSize="20dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/img_attach_preview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/login"
+            android:text="Done"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
-    <Button
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/edits"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/editboxlook"
-        android:hint="Attach Sewed Picture"
-        android:textSize="20dp"
-
-        />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/editboxlook"
-        android:hint="Additional Information"
-        android:textAlignment="center"
-
-        />
-
-    <Button
-        android:id="@+id/submit5"
-
-        android:layout_width="199dp"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/login"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:text="Submit"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp" />
-
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </LinearLayout>

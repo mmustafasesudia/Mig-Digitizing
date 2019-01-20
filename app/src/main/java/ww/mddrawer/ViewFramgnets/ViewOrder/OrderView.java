@@ -66,17 +66,6 @@ public class OrderView extends Fragment {
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(i);
-
-                                /*OrderViewDetail newDetails = new OrderViewDetail(jsonObject.getString("id"),
-                                        jsonObject.getString("designname"), jsonObject.getString("amount"),
-                                        jsonObject.getString("paiedstatus"));*/
-                                /*String id, orderid, orderedby,
-                                 orderDate, designname, formtype, order_type, is_estimate,
-                                 jobid, nocolors, namecolors, designsize_height,
-            designsize_width, designsize_format, patch_qty, fabric, fabric_type, baking_material, qty, applique, numappliques, colorappliques,
-            designformat, timeframe, sewsample, autothread, instructions, filename, state, payment, estimatedate, deliverydate, stiches,
-            findus, amount, paiedstatus, originalfile, generatedfile, pdfFile, orderDetail, embFile, invoiceDate, eta, estimateDetail,
-            assignto, digit_by, qc_by, modify_status;*/
                                 OrderViewDetail newDetails = new OrderViewDetail(
                                         jsonObject.getString("id"), jsonObject.getString("orderid"), jsonObject.getString("orderedby"),
                                         jsonObject.getString("orderDate"), jsonObject.getString("designname"), jsonObject.getString("formtype"),

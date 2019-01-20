@@ -15,7 +15,7 @@ import ww.mddrawer.Utills.FragmentReplace;
 public class SelectEstimate extends Fragment {
 
     String[] arraySpinner = new String[]{
-            "Order Type", "Digitizing", "Vector", "Embroidered Patches"
+            "Estimate Type", "Digitizing", "Vector", "Embroidered Patches"
     };
 
 

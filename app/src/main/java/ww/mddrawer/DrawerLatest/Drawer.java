@@ -16,11 +16,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import ww.mddrawer.ActivityNew.AboutUsActivity;
+import ww.mddrawer.ActivityNew.PrivacyPolicyActivity;
+import ww.mddrawer.EstimateFragments.SelectEstimate;
 import ww.mddrawer.LoginSignUp.Login;
+import ww.mddrawer.OrdersFramgents.SelectOrder;
 import ww.mddrawer.R;
 import ww.mddrawer.Utills.Config;
 import ww.mddrawer.Utills.FragmentReplace;
+import ww.mddrawer.fragment.AdvancePayment;
 import ww.mddrawer.fragment.DashboardFramgent;
+import ww.mddrawer.fragment.RequestEdit;
 
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -105,18 +111,45 @@ public class Drawer extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_home) {
+            //Dashboard
+            Fragment homeFragment = null;
+            Fragment homeF = new DashboardFramgent();
+            homeFragment = homeF;
+            FragmentReplace.replaceFragment(Drawer.this, homeFragment, R.id.frame_container);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_photos) {
+            //Order
+            Fragment homeFragment = null;
+            Fragment homeF = new SelectOrder();
+            homeFragment = homeF;
+            FragmentReplace.replaceFragment(Drawer.this, homeFragment, R.id.frame_container);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_movies) {
+            //Estimate
+            Fragment homeFragment = null;
+            Fragment homeF = new SelectEstimate();
+            homeFragment = homeF;
+            FragmentReplace.replaceFragment(Drawer.this, homeFragment, R.id.frame_container);
+
+        } else if (id == R.id.nav_notifications) {
+            //Edit
+            Fragment homeFragment = null;
+            Fragment homeF = new RequestEdit();
+            homeFragment = homeF;
+            FragmentReplace.replaceFragment(Drawer.this, homeFragment, R.id.frame_container);
+
+        } else if (id == R.id.nav_settings) {
+            //Advance Payment
+            Fragment homeFragment = null;
+            Fragment homeF = new AdvancePayment();
+            homeFragment = homeF;
+            FragmentReplace.replaceFragment(Drawer.this, homeFragment, R.id.frame_container);
 
         } else if (id == R.id.nav_about_us) {
-
+            startActivity(new Intent(this, AboutUsActivity.class));
         } else if (id == R.id.nav_privacy_policy) {
-
+            startActivity(new Intent(this, PrivacyPolicyActivity.class));
         } else if (id == R.id.nav_log_out) {
             Intent intent = new Intent(Drawer.this, Login.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
