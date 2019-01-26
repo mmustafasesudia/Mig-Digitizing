@@ -80,6 +80,7 @@ public class EstimatePatches extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_estimate_patches, container, false);
 
+        getActivity().setTitle("Estimate Patches");
 
         et_design_name = view.findViewById(R.id.et_design_name);
         et_color_name = view.findViewById(R.id.et_color_name);

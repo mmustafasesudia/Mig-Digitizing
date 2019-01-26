@@ -79,6 +79,7 @@ public class OrderPatches extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order_patches, container, false);
 
+        getActivity().setTitle("Order Patches");
 
         et_design_name = view.findViewById(R.id.et_design_name);
         et_color_name = view.findViewById(R.id.et_color_name);

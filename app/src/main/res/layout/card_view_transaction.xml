@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp">
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/transaction_card"
@@ -14,83 +14,66 @@
         card_view:cardCornerRadius="0dp"
         card_view:elevation="2dp">
 
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <ImageView
-                android:id="@+id/order_Image"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="16dp" />
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:id="@+id/invoice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/order_Image"
-                android:text="08"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:id="@+id/tv_orderid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/invoice"
-                android:layout_toRightOf="@+id/order_Image"
-                android:text="Edit jobfor invoice Mr craftsmanED-31542-817)"
-
-                android:textSize="12sp" />
+                android:id="@+id/tv_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/type"
-                android:layout_toRightOf="@+id/order_Image"
+                android:id="@+id/tv_paieddate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                android:text="14/06/18 08:48"
-                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/tv_invoiceNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/date"
-                android:layout_toRightOf="@id/order_Image"
-                android:orientation="horizontal"
+            <TextView
+                android:id="@+id/tv_transtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                >
+            <TextView
+                android:id="@+id/tv_createDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/date"
+            <TextView
+                android:id="@+id/tv_dateInvoiceCreated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                    android:layout_weight="0.8"
-                    android:text="Unpaid (Pay now)"
-                    android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_payDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/status"
+            <TextView
+                android:id="@+id/tv_refId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                    android:layout_weight="0.2"
-                    android:text="$18"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_chargeBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
-</RelativeLayout>
+</LinearLayout>

@@ -43,6 +43,8 @@ public class DashboardFramgent extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
+        getActivity().setTitle("Dashboard");
+
         placeorder = view.findViewById(R.id.imageView);
         placeorder.setOnClickListener(new View.OnClickListener() {
             @Override

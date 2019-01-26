@@ -32,6 +32,8 @@ public class SelectOrder extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_select_order, container, false);
 
+        getActivity().setTitle("Select Order");
+
         Spinner s = view.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_spinner_item, arraySpinner);

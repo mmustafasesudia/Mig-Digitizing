@@ -2,59 +2,89 @@ package ww.mddrawer.ViewFramgnets.ViewTransaction;
 
 public class TransactionDetail {
 
-    String invoice;
+    String orderid, paieddate, invoiceNo, transtype, createDate, dateInvoiceCreated, payDate, refId, chargeBy;
 
-    String dnt;
-    String type;
-    String status1;
-    String amount;
-
-    public TransactionDetail(String invoice, String dnt, String type, String status1, String amount) {
-        this.invoice = invoice;
-        this.dnt = dnt;
-        this.type = type;
-        this.status1 = status1;
-        this.amount = amount;
+    public TransactionDetail(String orderid, String paieddate, String invoiceNo, String transtype, String createDate, String dateInvoiceCreated, String payDate, String refId, String chargeBy) {
+        this.orderid = orderid;
+        this.paieddate = paieddate;
+        this.invoiceNo = invoiceNo;
+        this.transtype = transtype;
+        this.createDate = createDate;
+        this.dateInvoiceCreated = dateInvoiceCreated;
+        this.payDate = payDate;
+        this.refId = refId;
+        this.chargeBy = chargeBy;
     }
 
-    public String getType() {
-        return type;
+    public String getOrderid() {
+        return orderid;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
     }
 
-    public String getStatus1() {
-        return status1;
+    public String getPaieddate() {
+        return paieddate;
     }
 
-    public void setStatus1(String status1) {
-        this.status1 = status1;
+    public void setPaieddate(String paieddate) {
+        this.paieddate = paieddate;
     }
 
-    public String getAmount() {
-        return amount;
+    public String getInvoiceNo() {
+        return invoiceNo;
     }
 
-    public void setAmount(String amount) {
-        this.amount = amount;
+    public void setInvoiceNo(String invoiceNo) {
+        this.invoiceNo = invoiceNo;
     }
 
-    public String getDnt() {
-        return dnt;
+    public String getTranstype() {
+        return transtype;
     }
 
-    public void setDnt(String dnt) {
-        this.dnt = dnt;
+    public void setTranstype(String transtype) {
+        this.transtype = transtype;
     }
 
-    public String getInvoice() {
-        return invoice;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setInvoice(String invoice) {
-        this.invoice = invoice;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
+    public String getDateInvoiceCreated() {
+        return dateInvoiceCreated;
+    }
+
+    public void setDateInvoiceCreated(String dateInvoiceCreated) {
+        this.dateInvoiceCreated = dateInvoiceCreated;
+    }
+
+    public String getPayDate() {
+        return payDate;
+    }
+
+    public void setPayDate(String payDate) {
+        this.payDate = payDate;
+    }
+
+    public String getRefId() {
+        return refId;
+    }
+
+    public void setRefId(String refId) {
+        this.refId = refId;
+    }
+
+    public String getChargeBy() {
+        return chargeBy;
+    }
+
+    public void setChargeBy(String chargeBy) {
+        this.chargeBy = chargeBy;
+    }
 }

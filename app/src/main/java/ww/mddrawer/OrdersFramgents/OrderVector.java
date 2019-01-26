@@ -80,6 +80,7 @@ public class OrderVector extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order__vector, container, false);
 
+        getActivity().setTitle("Order Vector");
 
         et_design_name = view.findViewById(R.id.et_design_name);
         et_color_name = view.findViewById(R.id.et_color_name);

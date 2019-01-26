@@ -24,6 +24,8 @@ public class EstimateView extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_estimate_view, container, false);
 
+        getActivity().setTitle("Estimate View");
+
         rv = view.findViewById(R.id.estimate);
         rv.setHasFixedSize(true);
         EstimateDetail Details1 = new EstimateDetail("Mr Craftsman", "4 Nov", "$20", "Unpaid (Paynow)", "");

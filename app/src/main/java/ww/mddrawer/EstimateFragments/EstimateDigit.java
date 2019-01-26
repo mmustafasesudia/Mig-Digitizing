@@ -91,6 +91,8 @@ public class EstimateDigit extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_estimate_digit, container, false);
 
+        getActivity().setTitle("Estimate Digitizing");
+
         et_design_name = view.findViewById(R.id.et_design_name);
         et_color_name = view.findViewById(R.id.et_color_name);
         et_height = view.findViewById(R.id.et_height);

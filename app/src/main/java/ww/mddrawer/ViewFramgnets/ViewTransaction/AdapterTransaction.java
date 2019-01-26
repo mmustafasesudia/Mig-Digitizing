@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ww.mddrawer.R;
+import ww.mddrawer.Utills.Config;
 
 public class AdapterTransaction extends RecyclerView.Adapter<AdapterTransaction.MyViewHolder> {
 
@@ -32,11 +33,16 @@ public class AdapterTransaction extends RecyclerView.Adapter<AdapterTransaction.
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         TransactionDetail current = arrayList.get(position);
-        holder.invoice.setText(current.getInvoice());
-        holder.whattype.setText(current.getType());
-        holder.transaction_date.setText(current.getDnt());
-        holder.status.setText(current.getStatus1());
-        holder.amount.setText(current.getAmount());
+        holder.tv_orderid.setText("Order Id : " + current.getOrderid());
+        holder.tv_user.setText("User : " + Config.getEmail(acontext));
+        holder.tv_paieddate.setText("Paid Date : " + current.getPaieddate());
+        holder.tv_invoiceNo.setText("Invoice No. : " + current.getInvoiceNo());
+        holder.tv_transtype.setText("Trans. Type : " + current.getTranstype());
+        holder.tv_createDate.setText("Create Date : " + current.getCreateDate());
+        holder.tv_dateInvoiceCreated.setText("Invoice Created : " + current.getDateInvoiceCreated());
+        holder.tv_payDate.setText("Pay Date : " + current.getPayDate());
+        holder.tv_refId.setText("Ref Id : " + current.getRefId());
+        holder.tv_chargeBy.setText("Charged By : " + current.getChargeBy());
     }
 
     @Override
@@ -47,16 +53,21 @@ public class AdapterTransaction extends RecyclerView.Adapter<AdapterTransaction.
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public CardView mCardView;
-        public TextView invoice, whattype, transaction_date, status, amount;
+        public TextView tv_orderid, tv_user, tv_paieddate, tv_invoiceNo, tv_transtype, tv_createDate, tv_dateInvoiceCreated, tv_payDate, tv_refId, tv_chargeBy;
 
         public MyViewHolder(View v) {
             super(v);
             mCardView = v.findViewById(R.id.transaction_card);
-            invoice = v.findViewById(R.id.invoice);
-            whattype = v.findViewById(R.id.type);
-            transaction_date = v.findViewById(R.id.date);
-            status = v.findViewById(R.id.status);
-            amount = v.findViewById(R.id.amount);
+            tv_orderid = v.findViewById(R.id.tv_orderid);
+            tv_user = v.findViewById(R.id.tv_user);
+            tv_paieddate = v.findViewById(R.id.tv_paieddate);
+            tv_invoiceNo = v.findViewById(R.id.tv_invoiceNo);
+            tv_transtype = v.findViewById(R.id.tv_transtype);
+            tv_createDate = v.findViewById(R.id.tv_createDate);
+            tv_dateInvoiceCreated = v.findViewById(R.id.tv_dateInvoiceCreated);
+            tv_payDate = v.findViewById(R.id.tv_payDate);
+            tv_refId = v.findViewById(R.id.tv_refId);
+            tv_chargeBy = v.findViewById(R.id.tv_chargeBy);
 
         }
 

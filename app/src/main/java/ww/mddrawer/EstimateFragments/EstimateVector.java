@@ -79,6 +79,7 @@ public class EstimateVector extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_estimate_vector, container, false);
 
+        getActivity().setTitle("Estimate Vector");
 
         et_design_name = view.findViewById(R.id.et_design_name);
         et_color_name = view.findViewById(R.id.et_color_name);
