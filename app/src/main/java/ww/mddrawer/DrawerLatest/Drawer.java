@@ -16,6 +16,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import ww.mddrawer.ActivityNew.AboutUsActivity;
 import ww.mddrawer.ActivityNew.PrivacyPolicyActivity;
 import ww.mddrawer.EstimateFragments.SelectEstimate;
@@ -24,6 +32,7 @@ import ww.mddrawer.OrdersFramgents.SelectOrder;
 import ww.mddrawer.R;
 import ww.mddrawer.Utills.Config;
 import ww.mddrawer.Utills.FragmentReplace;
+import ww.mddrawer.Utills.ProgressDialogClass;
 import ww.mddrawer.fragment.AdvancePayment;
 import ww.mddrawer.fragment.DashboardFramgent;
 import ww.mddrawer.fragment.RequestEdit;
@@ -31,7 +40,7 @@ import ww.mddrawer.fragment.RequestEdit;
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextView tv_header_name, tv_header_email;
+    TextView tv_header_name, tv_header_email, tv_header_credit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +74,14 @@ public class Drawer extends AppCompatActivity
         tv_header_email = navigationView.getHeaderView(0).findViewById(R.id.tv_header_email);
         tv_header_email.setText("" + Config.getEmail(this));
 
+        tv_header_credit = navigationView.getHeaderView(0).findViewById(R.id.tv_header_credit);
 
         Fragment homeFragment = null;
         Fragment homeF = new DashboardFramgent();
         homeFragment = homeF;
         FragmentReplace.replaceFragment(Drawer.this, homeFragment, R.id.frame_container);
 
+        showCredit();
     }
 
     @Override
@@ -161,5 +172,33 @@ public class Drawer extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void showCredit() {
+        ProgressDialogClass.showProgress(this);
+        AndroidNetworking.get(Config.URL)
+                .addQueryParameter("mode", "showcredit")
+                .addQueryParameter("email", Config.getEmail(this))
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        ProgressDialogClass.hideProgress();
+
+                        try {
+                            String credit = response.getString("credit");
+                            tv_header_credit.setText("Credit : " + credit);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError error) {
+                        ProgressDialogClass.hideProgress();                                // handle error
+                    }
+                });
     }
 }
